@@ -1,20 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CryptoApp.Domain.Services.Implementation;
 using CryptoApp.Domain.Services.Interface;
 using CryptoApp.Web.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json.Serialization;
 
 namespace CryptoApp.Web
 {
@@ -33,7 +25,7 @@ namespace CryptoApp.Web
                 .AddScoped<ICommandService, CommandService>()
                 .AddTelegramBotClient(_configuration)
                 .AddControllers();
-            
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "CryptoApp.Web", Version = "v1"});
