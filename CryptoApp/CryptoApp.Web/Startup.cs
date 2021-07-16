@@ -7,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 
 namespace CryptoApp.Web
 {
@@ -24,7 +25,12 @@ namespace CryptoApp.Web
             services
                 .AddScoped<ICommandService, CommandService>()
                 .AddTelegramBotClient(_configuration)
-                .AddControllers();
+                .AddControllers()
+                .AddNewtonsoftJson(options => 
+                {
+                    options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                });
 
             services.AddSwaggerGen(c =>
             {
