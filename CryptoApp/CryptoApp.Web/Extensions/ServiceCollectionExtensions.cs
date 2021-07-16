@@ -12,7 +12,7 @@ namespace CryptoApp.Web.Extensions
             var webHook = $"{configuration["Url"]}/api/message/update";
             client.SetWebhookAsync(webHook).Wait();
             
-            return serviceCollection.AddTransient<ITelegramBotClient>(_=> client);
+            return serviceCollection.AddSingleton<ITelegramBotClient>(_=> client);
         }
     }
 }
