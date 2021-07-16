@@ -13,7 +13,7 @@ namespace CryptoApp.Domain.Commands.Implementation
         public async Task<Message> Execute(Message message, ITelegramBotClient client)
         {
             var chatId = message.Chat.Id;
-            return await client.SendTextMessageAsync(chatId, "Hallo I'm ASP.NET Core Bot", ParseMode.Markdown);
+            return await client.SendTextMessageAsync(chatId, "You have launched a crypto bot.", ParseMode.Markdown);
         }
 
         public bool Contains(Message message)
