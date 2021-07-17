@@ -7,6 +7,8 @@ namespace CryptoApp.Domain.Commands.Interface
     public interface ITelegramCommand
     {
         string Name { get; }
+        
+        string Description { get; }
 
         Task<Message> Execute(Message message, ITelegramBotClient client);
 

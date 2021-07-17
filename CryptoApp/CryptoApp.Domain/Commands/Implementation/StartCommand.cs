@@ -10,6 +10,8 @@ namespace CryptoApp.Domain.Commands.Implementation
     {
         public string Name => @"/start";
         
+        public string Description => "Начать работу с ботом";
+        
         public async Task<Message> Execute(Message message, ITelegramBotClient client)
         {
             var chatId = message.Chat.Id;

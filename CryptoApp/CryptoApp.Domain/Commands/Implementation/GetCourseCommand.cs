@@ -16,6 +16,8 @@ namespace CryptoApp.Domain.Commands.Implementation
     {
         public string Name => @"/getCourse";
 
+        public string Description => "Получить курс валют";
+
         private string _apiUrl =>
             "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=14&convert=USD";
 
