@@ -42,11 +42,11 @@ namespace CryptoApp.Domain.Commands.Implementation
                 strBuilder.Append("[USD]\n");
                 strBuilder.Append($"[{DateTime.Now.ToString(CultureInfo.InvariantCulture)}]\n");
                 strBuilder.Append("\n");
-                strBuilder.Append($"BTC {Math.Round(courseResponse.data[0].quote.USD.price, 3)}\n");
-                strBuilder.Append($"ETH {Math.Round(courseResponse.data[1].quote.USD.price, 3)}\n");
-                strBuilder.Append($"DOGE {Math.Round(courseResponse.data[5].quote.USD.price, 3)}\n");
-                strBuilder.Append($"ADA {Math.Round(courseResponse.data[4].quote.USD.price, 3)}\n");
-                strBuilder.Append($"LINK {Math.Round(courseResponse.data[13].quote.USD.price, 3)}\n");
+                strBuilder.Append($"BTC   {Math.Round(courseResponse.data[0].quote.USD.price, 3)}\n");
+                strBuilder.Append($"ETH   {Math.Round(courseResponse.data[1].quote.USD.price, 3)}\n");
+                strBuilder.Append($"DOGE  {Math.Round(courseResponse.data[5].quote.USD.price, 3)}\n");
+                strBuilder.Append($"ADA   {Math.Round(courseResponse.data[4].quote.USD.price, 3)}\n");
+                strBuilder.Append($"LINK  {Math.Round(courseResponse.data[13].quote.USD.price, 3)}\n");
                 
                 return await client.SendTextMessageAsync(chatId,
                     strBuilder.ToString(), 
