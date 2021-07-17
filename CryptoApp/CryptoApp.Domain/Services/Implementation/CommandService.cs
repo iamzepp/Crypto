@@ -14,7 +14,8 @@ namespace CryptoApp.Domain.Services.Implementation
             _commands = new List<ITelegramCommand>
             {
                 new StartCommand(),
-                new HelpCommand()
+                new HelpCommand(),
+                new GetCourseCommand()
             };
         }
 

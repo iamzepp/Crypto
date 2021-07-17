@@ -1,3 +1,6 @@
+using System;
+using CryptoApp.DataAccess.Common.Configuration;
+using CryptoApp.DataAccess.Common.Db;
 using CryptoApp.Domain.Services.Implementation;
 using CryptoApp.Domain.Services.Interface;
 using CryptoApp.Web.Extensions;
@@ -8,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using Npgsql;
 
 namespace CryptoApp.Web
 {
@@ -53,6 +57,16 @@ namespace CryptoApp.Web
             {
                 endpoints.MapControllers();
             });
+        }
+        
+        public void RegisterInjections(IServiceCollection services, IConfiguration configuration)
+        {
+            var configurationModel = 
+                configuration.GetSection("Settings").Get<ConfigurationModel>() 
+                ?? throw new ArgumentException($"Not found \'Settings\' section.");
+
+            services.AddSingleton<IConfig>(x => configurationModel);
+            services.AddTransient<IMainDbConnection>(x => new DbProxy(new NpgsqlConnection(configurationModel.MainDbConnectionString)));
         }
     }
 }

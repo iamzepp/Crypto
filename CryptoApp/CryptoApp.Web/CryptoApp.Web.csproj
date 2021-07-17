@@ -9,11 +9,13 @@
         <PackageReference Include="FluentValidation" Version="10.3.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.8" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Npgsql" Version="6.0.0-preview5" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
         <PackageReference Include="Telegram.Bot" Version="17.0.0-alpha.1" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CryptoApp.DataAccess\CryptoApp.DataAccess.csproj" />
       <ProjectReference Include="..\CryptoApp.Domain\CryptoApp.Domain.csproj" />
     </ItemGroup>
 

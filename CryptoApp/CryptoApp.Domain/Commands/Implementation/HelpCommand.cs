@@ -15,8 +15,7 @@ namespace CryptoApp.Domain.Commands.Implementation
             var chatId = message.Chat.Id;
             
             return await client.SendTextMessageAsync(chatId, 
-                "Command list:\n/start\n/help"
-                , ParseMode.Markdown);
+                "Command list:\n/start\n/help\n/getCourse", ParseMode.Markdown);
         }
 
         public bool Contains(Message message)
