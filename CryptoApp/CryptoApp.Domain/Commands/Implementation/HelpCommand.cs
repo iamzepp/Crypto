@@ -1,5 +1,4 @@
-﻿using System.Data;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
 using CryptoApp.DataAccess.Common.Db;
 using CryptoApp.Domain.Commands.Interface;

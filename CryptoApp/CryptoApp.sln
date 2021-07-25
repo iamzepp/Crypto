@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoApp.Domain", "CryptoA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoApp.DataAccess", "CryptoApp.DataAccess\CryptoApp.DataAccess.csproj", "{7E4BA52E-7839-4193-A7BA-3FE349B5E511}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoApp.Extensions", "CryptoApp.Extensions\CryptoApp.Extensions.csproj", "{0C0D80EA-9E15-4423-9895-8B1BA7E0192D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{7E4BA52E-7839-4193-A7BA-3FE349B5E511}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E4BA52E-7839-4193-A7BA-3FE349B5E511}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E4BA52E-7839-4193-A7BA-3FE349B5E511}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C0D80EA-9E15-4423-9895-8B1BA7E0192D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C0D80EA-9E15-4423-9895-8B1BA7E0192D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C0D80EA-9E15-4423-9895-8B1BA7E0192D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C0D80EA-9E15-4423-9895-8B1BA7E0192D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

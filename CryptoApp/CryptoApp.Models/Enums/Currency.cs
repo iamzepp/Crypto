@@ -1,11 +1,15 @@
-﻿namespace CryptoApp.Models.Enums
+﻿using System.ComponentModel;
+
+namespace CryptoApp.Models.Enums
 {
     public enum Currency
     {
-        ETH = 1,
-        BTC = 2,
-        DOGE = 3,
-        ADA = 4,
-        LINK = 5
+        [Description("BTC")] BTC = 2,
+        
+        [Description("DOGE")] DOGE = 3,
+        
+        [Description("ADA")] ADA = 4,
+        
+        [Description("LINK")] LINK = 5
     }
 }
