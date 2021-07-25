@@ -1,8 +1,10 @@
-﻿namespace CryptoApp.Models.Enums
+﻿using System.ComponentModel;
+
+namespace CryptoApp.Models.Enums
 {
     public enum Operation
     {
-        ADD = 1,
-        TAKEAWAY = 2
+        [Description("Добавить")] ADD = 1,
+        [Description("Отнять")] TAKEAWAY = 2
     }
 }

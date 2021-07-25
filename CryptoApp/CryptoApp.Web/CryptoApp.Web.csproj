@@ -19,4 +19,8 @@
       <ProjectReference Include="..\CryptoApp.Domain\CryptoApp.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Common" />
+    </ItemGroup>
+
 </Project>

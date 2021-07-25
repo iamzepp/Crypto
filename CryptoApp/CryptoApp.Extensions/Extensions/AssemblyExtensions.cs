@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace CryptoApp.Web.Common
+namespace CryptoApp.Extensions.Extensions
 {
-     /// <summary>
-    /// Методы расширения и вспомгательные методы для работы со сборками
-    /// </summary>
-    public static class AssemblyHelper
+    public static class AssemblyExtensions
     {
         /// <summary>
         /// Получить все сборки загруженные в память, кроме динавических
@@ -64,7 +61,7 @@ namespace CryptoApp.Web.Common
         /// <param name="nonAbstract"></param>
         /// <param name="includeNonPublic"></param>
         /// <returns></returns>
-        public static IEnumerable<TypeInfo> GetAllTypesInfoBasedOn(Type baseType, bool nonAbstract = true,
+        private static IEnumerable<TypeInfo> GetAllTypesInfoBasedOn(Type baseType, bool nonAbstract = true,
             bool includeNonPublic = false) =>
             GetLoadedAssemblies().SelectMany(x => includeNonPublic ? x.DefinedTypes : x.ExportedTypes)
                 .Where(baseType.IsAssignableFrom)
