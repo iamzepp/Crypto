@@ -15,7 +15,8 @@ namespace CryptoApp.Domain.Services.Implementation
             {
                 new StartCommand(),
                 new HelpCommand(),
-                new GetCourseCommand()
+                new GetCourseCommand(),
+                new AddCommand()
             };
         }
 

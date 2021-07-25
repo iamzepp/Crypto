@@ -5,8 +5,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Handlers\Command" />
-      <Folder Include="Handlers\Query" />
+      <PackageReference Include="Dapper" Version="2.0.90" />
+      <PackageReference Include="Telegram.Bot" Version="17.0.0-alpha.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\CryptoApp.Models\CryptoApp.Models.csproj" />
     </ItemGroup>
 
 </Project>

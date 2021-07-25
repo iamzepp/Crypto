@@ -3,6 +3,7 @@ using System.Globalization;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using CryptoApp.DataAccess.Common.Db;
 using CryptoApp.Domain.Commands.Interface;
 using CryptoApp.Models.Models;
 using Newtonsoft.Json;
@@ -22,6 +23,8 @@ namespace CryptoApp.Domain.Commands.Implementation
             "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest?start=1&limit=14&convert=USD";
 
         private string _apiKey => "3471bf9f-7973-4708-8e17-e2535cc460a6";
+        
+        public IMainDbConnection Connection { get; set; }
 
         public async Task<Message> Execute(Message message, ITelegramBotClient client)
         {
@@ -39,7 +42,7 @@ namespace CryptoApp.Domain.Commands.Implementation
                                      ?? throw new Exception();
 
                 var strBuilder = new StringBuilder();
-                strBuilder.Append("[USD]\n");
+                strBuilder.Append(@"\u07503300265 0334 [USD]\n");
                 strBuilder.Append($"[{DateTime.Now.ToString(CultureInfo.InvariantCulture)}]\n");
                 strBuilder.Append("\n");
                 strBuilder.Append($"BTC   {Math.Round(courseResponse.data[0].quote.USD.price, 3)}\n");

@@ -1,5 +1,7 @@
-﻿using System.Text;
+﻿using System.Data;
+using System.Text;
 using System.Threading.Tasks;
+using CryptoApp.DataAccess.Common.Db;
 using CryptoApp.Domain.Commands.Interface;
 using CryptoApp.Domain.Services.Implementation;
 using CryptoApp.Domain.Services.Interface;
@@ -15,6 +17,8 @@ namespace CryptoApp.Domain.Commands.Implementation
         
         public string Description => "Получить список команд";
         
+        public IMainDbConnection Connection { get; set; }
+        
         public async Task<Message> Execute(Message message, ITelegramBotClient client)
         { 
             var chatId = message.Chat.Id;
@@ -29,8 +33,7 @@ namespace CryptoApp.Domain.Commands.Implementation
                 strBuilder.Append($"{command.Name} - {command.Description}\n");
             }
             
-            return await client.SendTextMessageAsync(chatId, 
-                strBuilder.ToString(), ParseMode.Markdown);
+            return await client.SendTextMessageAsync(chatId,strBuilder.ToString(), ParseMode.Markdown);
         }
 
         public bool Contains(Message message)

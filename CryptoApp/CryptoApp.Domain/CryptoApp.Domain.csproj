@@ -10,6 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\CryptoApp.DataAccess\CryptoApp.DataAccess.csproj" />
       <ProjectReference Include="..\CryptoApp.Models\CryptoApp.Models.csproj" />
     </ItemGroup>
 

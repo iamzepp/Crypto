@@ -40,6 +40,8 @@ namespace CryptoApp.Web
             {
                 c.SwaggerDoc("v1", new OpenApiInfo {Title = "CryptoApp.Web", Version = "v1"});
             });
+
+            RegisterInjections(services);
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,11 +60,11 @@ namespace CryptoApp.Web
                 endpoints.MapControllers();
             });
         }
-        
-        public void RegisterInjections(IServiceCollection services, IConfiguration configuration)
+
+        private void RegisterInjections(IServiceCollection services)
         {
             var configurationModel = 
-                configuration.GetSection("Settings").Get<ConfigurationModel>() 
+                _configuration.GetSection("Settings").Get<ConfigurationModel>() 
                 ?? throw new ArgumentException($"Not found \'Settings\' section.");
 
             services.AddSingleton<IConfig>(x => configurationModel);
