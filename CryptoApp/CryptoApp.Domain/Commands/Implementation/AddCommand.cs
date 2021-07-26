@@ -13,9 +13,9 @@ namespace CryptoApp.Domain.Commands.Implementation
 {
     public class AddCommand : ITelegramCommand
     {
-        public string Name => @"/add";
+        public string Name => @"/contact";
 
-        public string Description => "Добавить валюту";
+        public string Description => "Отправить информацию о контакте";
         
         public IMainDbConnection Connection { get; set; }
 
@@ -27,16 +27,21 @@ namespace CryptoApp.Domain.Commands.Implementation
                 .Select(x => new { Name = x.GetDescription(), Id = (int) x })
                 .ToList();
 
-            var text = "Какую валюту вы хотите добавить?";
+            var text = @"Пожалуйста, отправте свой контакт";
             
             var keyboard = new ReplyKeyboardMarkup(
                 new[] {
                     new[]{
-                        new KeyboardButton("BTC"),
-                        new KeyboardButton("ETH")
+                        new KeyboardButton("Отправить контакт")
+                        {
+                            RequestContact = true
+                        },
+                        new KeyboardButton("Отправить местоположение")
+                        {
+                            RequestLocation = true
+                        }
                     }
                 });
-
 
             return await client.SendTextMessageAsync(chatId, text, ParseMode.Markdown, replyMarkup: keyboard);
         }

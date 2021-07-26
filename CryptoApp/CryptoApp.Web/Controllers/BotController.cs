@@ -35,13 +35,7 @@ namespace CryptoApp.Web.Controllers
             {
                 return Ok();
             }
-
-            if (update.CallbackQuery is not null)
-            {
-                
-            }
             
-
             var message = update.Message;
 
             foreach (var command in _commandService.Get())
